@@ -1,0 +1,11 @@
+@import "../../../../styles/mixins.module";
+@import "../../../../styles/variables.module";
+
+.secHeaderWrapper {
+  grid-area: "secHeaderWrapper";
+  @include fhw;
+  width: 100%;
+  height: 100%;
+  @include flex-container(flex-start, center);
+  // border: 1px solid #d0d5dd;
+}

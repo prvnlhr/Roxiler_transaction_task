@@ -1,0 +1,15 @@
+@import "../styles/mixins.module";
+* {
+  margin: 0;
+  box-sizing: border-box;
+  margin: 0px;
+  border-width: 0px;
+  color: #101828;
+}
+
+body {
+  @include font-family;
+  @include font-smoothing;
+  @include overflow-scroll-touch;
+  @include hide-scrollbar;
+}

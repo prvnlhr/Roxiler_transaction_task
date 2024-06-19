@@ -1,0 +1,144 @@
+@import "../../../styles/variables.module";
+@import "../../../styles/mixins.module";
+
+.datatable {
+  grid-area: tableWrapper;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  // border: 1px solid red;
+  @include flex-container($direction: column);
+
+  &__headerWrapper {
+    width: 100%;
+    height: 10%;
+    @include flex-container(space-between, center);
+
+    &__left {
+      width: 50%;
+      height: 100%;
+    }
+    &__right {
+      width: auto;
+      height: 100%;
+      @include flex-container(flex-start, center);
+    }
+  }
+  &__contentOuterWrapper {
+    width: 100%;
+    height: 90%;
+    // border: 1px solid black;
+    @include flex-container($direction: column);
+
+    .searchWrapper {
+      width: 100%;
+      height: 10%;
+      @include flex-container(flex-start, center);
+    }
+    .tableWrapper {
+      width: 100%;
+      height: 90%;
+      max-height: 90%;
+      position: relative;
+      @include flex-container(flex-start, flex-start, $direction: column);
+      border: 1px solid #d7dbec;
+
+      .tableScrollWrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: 90%;
+        position: relative;
+        @include scroll($dir: auto);
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        thead {
+          height: 50px;
+          position: sticky;
+          top: 0;
+          background-color: white;
+        }
+        th {
+          text-align: start;
+          padding: 15px;
+          p {
+            margin: 0;
+            @include font(0.8rem, $weight: 500);
+          }
+        }
+        tr {
+          height: 35px;
+          border: 1px solid #d7dbec;
+        }
+        tr:nth-child(even) {
+          background-color: #ecf2ff;
+        }
+        td {
+          padding: 15px;
+        }
+        td p {
+          @include font(0.8rem);
+          width: 100%;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.tablePaginationWrapper {
+  width: 100%;
+  height: 10%;
+  @include flex-container(flex-start, center);
+  padding-left: 8px;
+  background-color: white;
+
+  .prevNextBtn {
+    width: auto;
+    height: 25px;
+    margin-right: 5px;
+    border-radius: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+    background: none;
+    background-color: #bdcff4;
+
+    p {
+      @include font(0.8rem, $color: #635db0, $weight: 500);
+    }
+    &--disabled {
+      border: 1px solid #d0d5dd;
+      background-color: transparent;
+      p {
+        color: #d0d5dd;
+      }
+    }
+  }
+  .pagNoBtn {
+    height: 25px;
+    aspect-ratio: 1/1;
+    border: 1px solid #d0d5dd;
+
+    margin-right: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: none;
+
+    p {
+      @include font(0.8rem);
+    }
+    &--active {
+      background-color: #635db0;
+      p {
+        color: white;
+      }
+    }
+  }
+}

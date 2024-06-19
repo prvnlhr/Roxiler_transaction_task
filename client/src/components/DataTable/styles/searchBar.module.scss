@@ -1,0 +1,40 @@
+@import "../../../styles/variables.module";
+@import "../../../styles/mixins.module";
+.searchBarWrapper {
+  width: 200px;
+  height: 65%;
+  border: 1px solid #d7dbec;
+  @include flex-container(flex-start, center);
+
+  &__inputWrapper {
+    width: 100%;
+    height: 100%;
+    // border: 1px solid black;
+    @include flex-container;
+
+    input {
+      width: 100%;
+      height: 100%;
+      background: none;
+      outline: none;
+      padding-left: 8px;
+
+      &::placeholder {
+        @include font(0.8rem, $color: #a1a7c4, $style: italic);
+      }
+    }
+  }
+
+  &__iconWrapper {
+    height: 100%;
+    aspect-ratio: 1/1;
+    // border: 1px solid red;
+    @include flex-container(center, center);
+
+    div {
+      @include flex-container(center, center);
+      width: 50%;
+      aspect-ratio: 1/1;
+    }
+  }
+}

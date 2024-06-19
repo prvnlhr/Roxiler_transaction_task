@@ -1,0 +1,53 @@
+@import "../../../styles/mixins.module";
+
+.statsWrapper {
+  grid-area: statsWrapper;
+  // border: 1px solid blue;
+  width: 100%;
+  height: 100%;
+  .headerWrapper {
+    width: 100%;
+    height: 20%;
+    // border: 1px solid blue;
+  }
+  .contentWrapper {
+    width: 100%;
+    height: 80%;
+    .statsCard {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border: 1px solid #d7dbec;
+      @include flex-container(space-between, $wrap: wrap);
+      padding: 10px;
+    }
+  }
+}
+
+.statsElement {
+  width: 49%;
+  height: 47%;
+    // border: 1px solid #d7dbec;
+  @include flex-container($direction: column);
+  padding: 5px;
+
+  align-content: space-between;
+  .valueDiv {
+    height: 60%;
+    width: 100%;
+    // border: 1px solid black;
+    @include flex-container(flex-start, center);
+    p {
+      @include font(1.5rem, $color: #635db0);
+    }
+  }
+  .labelDiv {
+    height: 40%;
+    width: 100%;
+    // border: 1px solid blue;
+    @include flex-container(flex-start, center);
+    p {
+      @include font(0.8rem, $weight: 500);
+    }
+  }
+}

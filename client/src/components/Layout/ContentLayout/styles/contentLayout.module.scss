@@ -1,0 +1,41 @@
+@import "../../../../styles/mixins.module";
+.contentLayoutWrapper {
+  grid-area: contentLayoutWrapper;
+  @include fhw;
+  @include flex-container(center, center);
+  // border: 1px solid blue;
+
+  &__contentAreaWrapper {
+    width: 98%;
+    height: 98%;
+    display: grid;
+    grid-template-rows: 50% 48%;
+    grid-template-columns: 58% 20% 20%;
+    grid-template-areas:
+      "tableWrapper  statsWrapper pieChartWrapper"
+      "tableWrapper barChartWrapper barChartWrapper";
+    z-index: 1;
+    grid-gap: 1%;
+    // border: 1px solid blue;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .contentLayoutWrapper {
+    // border: 1px solid red;
+    @include flex-container(column, center);
+    padding-left: 5px;
+    padding-right: 5px;
+
+    &__contentAreaWrapper {
+      grid-template-rows: 60% 50% 50% 50%;
+      grid-template-columns: 100%;
+      grid-template-areas:
+        "tableWrapper"
+        "statsWrapper"
+        "pieChartWrapper"
+        "barChartWrapper";
+    }
+  }
+}
