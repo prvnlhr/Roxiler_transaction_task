@@ -15,8 +15,7 @@ const PieChart = () => {
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
-    console.log(pieData);
-    if (chartRef && chartRef.current && pieData && pieData.length > 0) {
+    if (chartRef.current && pieData && pieData.length > 0) {
       const ctx = chartRef.current.getContext("2d");
       chartInstance.current = new Chart(ctx, {
         type: "pie",

@@ -14,7 +14,7 @@ const BarChart = () => {
       chartInstance.destroy(); // Destroy the existing chart instance
     }
 
-    if (chartRef && chartRef.current && priceRanges) {
+    if (chartRef.current && priceRanges) {
       const ctx = chartRef.current.getContext("2d");
 
       const newChartInstance = new Chart(ctx, {
@@ -61,7 +61,7 @@ const BarChart = () => {
             tooltip: {
               callbacks: {
                 label: function (tooltipItem) {
-                  return tooltipItem.yLabel;
+                  return tooltipItem.formattedValue;
                 },
               },
             },
