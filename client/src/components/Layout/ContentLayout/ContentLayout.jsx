@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./styles/contentLayout.module.scss";
 import DataTable from "../../DataTable/DataTable";
 import Statistics from "../../Statistics/Statistics";
-
+import BarChart from "../../Chart/BarChart";
+import PieChart from "../../Chart/PieChart";
 
 const ContentLayout = () => {
   return (
@@ -10,7 +11,8 @@ const ContentLayout = () => {
       <div className={styles.contentLayoutWrapper__contentAreaWrapper}>
         <DataTable />
         <Statistics />
-      
+        <BarChart />
+        <PieChart />
       </div>
     </div>
   );
