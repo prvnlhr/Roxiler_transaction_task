@@ -41,6 +41,7 @@ const DataTable = () => {
 
         {Array.from({ length: total }, (_, index) => (
           <button
+            onClick={() => setPage(index + 1)}
             className={`${styles.pagNoBtn} ${
               page === index + 1 && styles["pagNoBtn--active"]
             }`}
