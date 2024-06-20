@@ -1,6 +1,6 @@
 # Transaction Dashboard
 
-Link to the live site: [Transaction Dashboard](https://transaction-dashboard-hiaq.onrender.com/)
+Link to the live site: 🔗 [Transaction Dashboard](https://transaction-dashboard-hiaq.onrender.com/)
 
 ## Screenshots
 
