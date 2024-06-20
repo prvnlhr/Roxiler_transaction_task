@@ -14,7 +14,10 @@ const PORT = process.env.PORT || 9000;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [
+      "http://localhost:3000",
+      "https://transaction-dashboard-hiaq.onrender.com",
+    ],
     credentials: true,
   })
 );
