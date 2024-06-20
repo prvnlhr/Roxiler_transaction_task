@@ -11,8 +11,8 @@ const ContentLayout = () => {
       <div className={styles.contentLayoutWrapper__contentAreaWrapper}>
         <DataTable />
         <Statistics />
-        <BarChart />
-        <PieChart />
+        {/* <BarChart /> */}
+        {/* <PieChart /> */}
       </div>
     </div>
   );
