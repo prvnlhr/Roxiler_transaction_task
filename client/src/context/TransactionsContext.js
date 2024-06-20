@@ -57,7 +57,7 @@ export const TransactionsProvider = ({ children }) => {
   const fetchTransactionsForMonth = async () => {
     try {
       const response = await axios.get(
-        `${apiBaseUrl}/transactions/transactions`,
+        `${apiBaseUrl}/api/transactions/transactions`,
         {
           params: {
             month: month,
@@ -109,7 +109,7 @@ export const TransactionsProvider = ({ children }) => {
   const fetchStatisticsForMonth = async () => {
     try {
       const response = await axios.get(
-        `${apiBaseUrl}/transactions/statistics`,
+        `${apiBaseUrl}/api/transactions/statistics`,
         {
           params: {
             month: month,
@@ -150,11 +150,14 @@ export const TransactionsProvider = ({ children }) => {
 
   const fetchChartDataForMonth = async () => {
     try {
-      const response = await axios.get(`${apiBaseUrl}/transactions/bar-chart`, {
-        params: {
-          month: month,
-        },
-      });
+      const response = await axios.get(
+        `${apiBaseUrl}/api/transactions/bar-chart`,
+        {
+          params: {
+            month: month,
+          },
+        }
+      );
 
       if (typeof response.data === "object" && response.data !== null) {
         setPriceRanges(response.data);
@@ -192,11 +195,14 @@ export const TransactionsProvider = ({ children }) => {
 
   const fetchPieDataForMonth = async () => {
     try {
-      const response = await axios.get(`${apiBaseUrl}/transactions/pie-chart`, {
-        params: {
-          month: month,
-        },
-      });
+      const response = await axios.get(
+        `${apiBaseUrl}/api/transactions/pie-chart`,
+        {
+          params: {
+            month: month,
+          },
+        }
+      );
 
       if (
         Array.isArray(response.data) &&
